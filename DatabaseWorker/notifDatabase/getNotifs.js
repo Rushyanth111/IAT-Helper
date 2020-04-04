@@ -11,4 +11,4 @@ function getNotifs(id) {
   });
 }
 
-export default getNotifs;
+module.exports = getNotifs;

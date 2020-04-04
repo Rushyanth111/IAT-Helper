@@ -1,3 +1,3 @@
-const dbcreator = import("../createDatabase");
+const dbcreator = require("../createDatabase");
 
-export default dbcreator("notif.db");
+module.exports = dbcreator("notif.db");
