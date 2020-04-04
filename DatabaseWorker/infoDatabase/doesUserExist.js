@@ -9,4 +9,4 @@ async function doesUserExist(email) {
   });
 }
 
-export default doesUserExist;
+module.exports = doesUserExist;

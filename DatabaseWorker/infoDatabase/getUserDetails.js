@@ -16,4 +16,4 @@ async function getUserDetails(email) {
   });
 }
 
-export default getUserDetails;
+module.exports = getUserDetails;

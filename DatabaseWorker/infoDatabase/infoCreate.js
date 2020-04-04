@@ -1,3 +1,3 @@
-const dbcreator = import("../createDatabase");
+const dbcreator = require("../createDatabase");
 
-export default dbcreator("info.db");
+module.exports = dbcreator("info.db");
