@@ -17,14 +17,15 @@ Each of the object keys are a file, inner objects are to be parsed with a nedb r
   },
   "notifications": {
     "notificationId": "primary",
-    "idFrom": "primary",
-    "ifTo": "primary",
-    "Message": "",
-    "Read": ""
+    "idFrom": "",
+    "ifTo": "",
+    "message": "",
+    "read": "boolean"
   },
   "tokens": {
     "accountId": "primary",
-    "token": "unique"
+    "token": "unique",
+    "expires": ""
   }
 }
 ```

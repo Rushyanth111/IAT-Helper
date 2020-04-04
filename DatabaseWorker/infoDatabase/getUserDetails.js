@@ -1,4 +1,6 @@
-async function getUserDetails(db, email) {
+const db = require("./infoCreate");
+
+async function getUserDetails(email) {
   return new Promise((resolve, reject) => {
     db.find({ email: email }, function(err, docs) {
       if (!err && docs.length > 0) {
