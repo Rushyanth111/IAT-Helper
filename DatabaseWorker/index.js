@@ -1,4 +1,10 @@
-const createDatabase = import("./createDatabase");
-const { doesUserExist, getUserDetails } = import("./infoDatabase");
-const { getNotifs, addNotifs, markReadNotifs } = import("./notifDatabase");
-export { createDatabase, doesUserExist, getUserDetails };
+const { addUser, doesUserExist, getUserDetails } = require("./infoDatabase");
+const { getNotifs, addNotifs, markReadNotifs } = require("./notifDatabase");
+module.exports = {
+  doesUserExist: doesUserExist,
+  getUserDetails: getUserDetails,
+  getNotifs: getNotifs,
+  addNotifs: addNotifs,
+  addUser: addUser,
+  markReadNotifs: markReadNotifs
+};
