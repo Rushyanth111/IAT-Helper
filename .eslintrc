@@ -1,0 +1,17 @@
+{
+    "extends": [
+        "eslint:recommended"
+    ],
+    "plugins": [
+        "react-redux"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "env": {
+        "node":true,
+        "browser": true
+    }
+}
