@@ -1,20 +1,18 @@
 const os = require("fs");
-
+const dbWorker = require("./DatabaseWorker");
 async function main() {
-    db.insert({
-      accountId: "1234",
-      email: "essss",
-      password: "kekw",
-      accType: 3
-    });
-  
-    let x = await getUserDetails("essss");
-  
+  try {
+    dbWorker.addUser("xyz@gmail.com", "abc", "passsss", "boo");
+    let x = await dbWorker.getUserDetails("xyz@gmail.com");
     console.log(x);
-    process.on("exit", () => {
-      os.unlinkSync("info.db");
-    });
+  } catch (error) {
+    console.log(error);
   }
-  
-  main();
-  
+
+  process.on("exit", () => {
+    os.unlinkSync("info.db");
+    os.unlinkSync("notif.db");
+  });
+}
+
+main();
