@@ -5,7 +5,7 @@ function addNotif(fromId, ToId, Message) {
   db.insert({
     notificationId: tokgen.generate(),
     idFrom: fromId,
-    ifTo: ToId,
+    idTo: ToId,
     message: Message,
     read: false
   });

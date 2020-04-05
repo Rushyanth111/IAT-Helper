@@ -1,3 +1,9 @@
 const dbcreator = require("../createDatabase");
 
-module.exports = dbcreator("info.db");
+const db = dbcreator("info.db");
+db.ensureIndex({
+  fieldName: "email",
+  unique: true,
+});
+
+module.exports = db;
