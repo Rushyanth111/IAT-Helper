@@ -6,4 +6,9 @@ db.ensureIndex({
   unique: true,
 });
 
+db.ensureIndex({
+  fieldName: "accountId",
+  unique: true,
+});
+
 module.exports = db;
