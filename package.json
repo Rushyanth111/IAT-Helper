@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "node Tests.js",
+    "stop": "pkill -f --signal SIGINT iathelper",
+    "test": "Tests.js",
     "build": "webpack --config webpack.dev.js"
   },
   "author": "",

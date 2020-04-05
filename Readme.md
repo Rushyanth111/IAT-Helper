@@ -25,8 +25,10 @@ Each of the object keys are a file, inner objects are to be parsed with a nedb r
   },
   "tokens": {
     "accountId": "primary",
-    "token": "unique",
-    "expires": ""
+    "accessToken": "unique",
+    "expires": "",
+    "refreshToken": "", //Expires at 14days in production.
+    "createdAt": ""
   }
 }
 ```
