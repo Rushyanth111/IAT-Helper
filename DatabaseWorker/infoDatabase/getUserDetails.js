@@ -5,6 +5,7 @@ async function getUserDetails(email) {
     db.findOne(
       { email: email },
       {
+        accountId: 1,
         email: 1,
         username: 1,
         accountType: 1,
