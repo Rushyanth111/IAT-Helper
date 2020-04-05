@@ -1,4 +1,9 @@
-const { addUser, doesUserExist, getUserDetails } = require("./infoDatabase");
+const {
+  addUser,
+  doesUserExist,
+  getUserDetails,
+  authenticateUser,
+} = require("./infoDatabase");
 const { getNotifs, addNotifs, markReadNotifs } = require("./notifDatabase");
 module.exports = {
   doesUserExist: doesUserExist,
@@ -6,5 +11,6 @@ module.exports = {
   getNotifs: getNotifs,
   addNotifs: addNotifs,
   addUser: addUser,
-  markReadNotifs: markReadNotifs
+  markReadNotifs: markReadNotifs,
+  authenticateUser: authenticateUser,
 };

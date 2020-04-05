@@ -2,10 +2,13 @@ const os = require("fs");
 const dbWorker = require("./DatabaseWorker");
 async function main() {
   try {
-    dbWorker.addUser("xyz@gmail.com", "abc", "passsss", "boo");
+    dbWorker.addUser("xyz@gmail.com", "abc", "passsss", 1);
     let x = await dbWorker.doesUserExist("xyz@gmail.com");
     console.log(x);
     x = await dbWorker.getUserDetails("xyz@gmail.com");
+    console.log(x);
+
+    x = await dbWorker.authenticateUser("xyz@gmail.com", "axbc");
     console.log(x);
 
     //Notifs

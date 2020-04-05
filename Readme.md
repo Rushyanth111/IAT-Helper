@@ -10,6 +10,7 @@ Each of the object keys are a file, inner objects are to be parsed with a nedb r
 {
   "info": {
     "_id": "primary",
+    "accountId": "primary",
     "email": "PK",
     "username": "",
     "password": "encrypted",
@@ -18,7 +19,7 @@ Each of the object keys are a file, inner objects are to be parsed with a nedb r
   "notifications": {
     "notificationId": "primary",
     "idFrom": "",
-    "ifTo": "",
+    "idTo": "",
     "message": "",
     "read": "boolean"
   },
