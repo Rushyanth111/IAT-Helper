@@ -1,13 +1,6 @@
-process.title = "iathelper";
-const express = require("express");
-const bodyparser = require("body-parser");
-const dbWorker = require("./DatabaseWorker");
-const app = express();
-const port = 10000;
+const dbWorker = require("../DatabaseWorker");
 
-app.use(bodyparser.json());
-
-app.post("/auth", async function (req, res) {
+async function authenticate(req, res) {
   try {
     dbWorker.addUser("1@1", "aba", "123", 1);
     const email = req.body.email;
@@ -35,13 +28,6 @@ app.post("/auth", async function (req, res) {
     });
     return;
   }
-});
+}
 
-const server = app.listen(port, () => {
-  console.log(`Listening on Port ${port}`);
-});
-
-process.on("SIGINT", () => {
-  server.close();
-  console.log("Server is not listening anymore.");
-});
+module.exports = authenticate;

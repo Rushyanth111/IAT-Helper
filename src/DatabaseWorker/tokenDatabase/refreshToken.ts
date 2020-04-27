@@ -13,10 +13,20 @@ function refreshToken(refreshToken) {
   );
 
   return new Promise((resolve, reject) => {
-    db.findOne({ refreshToken: refreshToken }, (err, docs) => {
-      if (!err) resolve(docs);
-      else reject(err);
-    });
+    db.findOne(
+      { refreshToken: refreshToken },
+      {
+        refreshToken: 1,
+        accessToken: 1,
+        expiers: 1,
+        createdAt: 1,
+        _id: 0,
+      },
+      (err, docs) => {
+        if (!err) resolve(docs);
+        else reject(err);
+      }
+    );
   });
 }
 

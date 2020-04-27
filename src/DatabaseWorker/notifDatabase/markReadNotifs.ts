@@ -1,4 +1,4 @@
-const db = require("./notifCreate");
+import db from "./notifCreate.js";
 function markReadNotifs(notificationId) {
   return new Promise((resolve, reject) => {
     db.update(

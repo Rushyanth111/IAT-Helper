@@ -9,7 +9,6 @@ Each of the object keys are a file, inner objects are to be parsed with a nedb r
 ```json
 {
   "info": {
-    "_id": "primary",
     "accountId": "primary",
     "email": "PK",
     "username": "",
@@ -29,6 +28,16 @@ Each of the object keys are a file, inner objects are to be parsed with a nedb r
     "expires": "",
     "refreshToken": "", //Expires at 14days in production.
     "createdAt": ""
+  },
+  "document": {
+    "documentId": "primary",
+    "documentPath": "Path",
+    "documentName": "XYZ.pdf"
+  },
+  "comment": {
+    "commentId": "primary",
+    "documentId": "someDocumentID",
+    "message": ""
   }
 }
 ```

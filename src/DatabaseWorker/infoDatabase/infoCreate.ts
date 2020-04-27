@@ -1,4 +1,4 @@
-const dbcreator = require("../createDatabase");
+import dbcreator from "../createDatabase";
 
 const db = dbcreator("info.db");
 db.ensureIndex({
@@ -11,4 +11,4 @@ db.ensureIndex({
   unique: true,
 });
 
-module.exports = db;
+export default db;

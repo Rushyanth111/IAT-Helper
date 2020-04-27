@@ -1,6 +1,6 @@
-const db = require("./infoCreate");
+const db = require("./infoCreate").default;
 
-async function getUserDetails(email) {
+async function getUserDetails(email: string) {
   return new Promise((resolve, reject) => {
     db.findOne(
       { email: email },
@@ -22,4 +22,4 @@ async function getUserDetails(email) {
   });
 }
 
-module.exports = getUserDetails;
+export default getUserDetails;

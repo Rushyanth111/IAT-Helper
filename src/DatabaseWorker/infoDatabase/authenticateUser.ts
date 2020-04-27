@@ -1,4 +1,4 @@
-const db = require("./infoCreate");
+import db from "./infoCreate"
 
 function authenticateUser(email, password) {
   return new Promise((resolve) => {
@@ -19,4 +19,4 @@ function authenticateUser(email, password) {
   });
 }
 
-module.exports = authenticateUser;
+export default authenticateUser;

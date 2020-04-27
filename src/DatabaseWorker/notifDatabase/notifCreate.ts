@@ -1,4 +1,4 @@
-const dbcreator = require("../createDatabase");
+import dbcreator from "../createDatabase";
 
 const db = dbcreator("notif.db");
 db.ensureIndex({
@@ -20,4 +20,4 @@ process.on("SIGINT",()=>{
   clearInterval(settingInterval)
 })
 
-module.exports = db;
+export default db;
