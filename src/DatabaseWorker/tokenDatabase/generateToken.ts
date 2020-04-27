@@ -1,5 +1,5 @@
-const db = require("./createToken");
-const token = require("uuid-token-generator");
+import db from './createToken';
+import token from 'uid-generator';
 
 function generateToken(accountId) {
   const tokgen = new token();

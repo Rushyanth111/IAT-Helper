@@ -1,13 +1,13 @@
-const tokens = require("uuid-token-generator");
-const db = require("./notifCreate");
+import Tokens from 'uid-generator';
+import db from './notifCreate';
 function addNotif(fromId, ToId, Message) {
-  const tokgen = new tokens();
+  const tokgen = new Tokens();
   db.insert({
     notificationId: tokgen.generate(),
     idFrom: fromId,
     idTo: ToId,
     message: Message,
-    read: false
+    read: false,
   });
 }
 

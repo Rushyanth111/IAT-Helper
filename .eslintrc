@@ -1,18 +1,27 @@
 {
-    "extends": [
-        "eslint:recommended"
-    ],
-    "plugins": [
-        "react-redux"
-    ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        }
-    },
-    "env": {
-        "node":true,
-        "browser": true,
-        "es6": true
-    },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": ["google"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint/eslint-plugin"],
+
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.ts"]
+    }
+  ],
+  "rules": {
+    "semi": ["error", "always"],
+    "require-jsdoc": "off",
+    "no-var": 2,
+    "prefer-const": 2,
+    "linebreak-style": 0,
+    "no-mixed-requires": 2
+  }
 }

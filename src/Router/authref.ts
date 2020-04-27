@@ -1,10 +1,10 @@
-const dbWorker = require("../DatabaseWorker");
+const dbWorker = require('../DatabaseWorker');
 
 async function authRefresh(req, res) {
   try {
     const refreshToken = req.body.refreshToken;
 
-    let refreshed = await dbWorker.refreshToken(refreshToken);
+    const refreshed = await dbWorker.refreshToken(refreshToken);
 
     res.status(200).json(refreshed);
   } catch (err) {

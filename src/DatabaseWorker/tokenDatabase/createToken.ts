@@ -1,4 +1,4 @@
-const dbCreator = require("../createDatabase");
+import dbCreator from "../createDatabase";
 
 const db = dbCreator("token.db");
 
@@ -17,4 +17,4 @@ db.ensureIndex({
   expireAfterSeconds: 1209600,
 });
 
-module.exports = db;
+export default db;

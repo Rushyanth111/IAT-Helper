@@ -1,23 +1,23 @@
-import dbcreator from "../createDatabase";
+import dbcreator from '../createDatabase';
 
-const db = dbcreator("notif.db");
+const db = dbcreator('notif.db');
 db.ensureIndex({
-  fieldName: "email",
+  fieldName: 'email',
   unique: true,
 });
 const settingInterval = setInterval(() => {
   db.remove(
-    {
-      read: true,
-    },
-    {
-      multi: true,
-    }
+      {
+        read: true,
+      },
+      {
+        multi: true,
+      }
   );
 }, 10000);
 
-process.on("SIGINT",()=>{
-  clearInterval(settingInterval)
-})
+process.on('SIGINT', () => {
+  clearInterval(settingInterval);
+});
 
 export default db;
