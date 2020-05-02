@@ -9,7 +9,7 @@ const port: number = 10000;
 app.post('/auth', authenticateUser);
 
 const server = app.listen(port, () => {
-  console.log(`Listening on Port ${port} and making sure that this works`);
+  console.log(`Listening on Port ${port}`);
 });
 
 process.on('SIGINT', () => {
