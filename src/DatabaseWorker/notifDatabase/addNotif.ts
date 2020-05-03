@@ -11,4 +11,4 @@ function addNotif(fromId, ToId, Message) {
   });
 }
 
-module.exports = addNotif;
+export default addNotif;

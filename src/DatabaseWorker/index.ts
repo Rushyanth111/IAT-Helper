@@ -1,6 +1,6 @@
-const { addUser, getUserDetails, authenticateUser } = require("./infoDatabase");
-const { getNotifs, addNotifs, markReadNotifs } = require("./notifDatabase");
-const { generateToken, refreshToken } = require("./tokenDatabase");
+const {addUser, getUserDetails, authenticateUser} = require('./infoDatabase');
+const {getNotifs, addNotifs, markReadNotifs} = require('./notifDatabase');
+const {generateToken, refreshToken} = require('./tokenDatabase');
 
 export {
   getUserDetails,

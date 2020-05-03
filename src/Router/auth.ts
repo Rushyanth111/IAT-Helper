@@ -1,33 +1,27 @@
-const dbWorker = require("../DatabaseWorker");
+import {Request, Response} from 'express-serve-static-core';
+import {
+  authenticateUser,
+  generateToken,
+  getUserDetails,
+} from '../DatabaseWorker';
 
-async function authenticate(req, res) {
+async function authenticate(req: Request, res: Response) {
   try {
-    dbWorker.addUser("1@1", "aba", "123", 1);
-    const email = req.body.email;
+    const email = req.body['email'];
     const password = req.body.password;
-    let x = await dbWorker.authenticateUser(email, password);
-    if (!x) {
-      res.status(400).send({
-        message: "You are not registered.",
-      });
-      return;
-    }
+    let x = await authenticateUser(email, password);
+    x = await getUserDetails(email);
 
-    x = await dbWorker.getUserDetails(email);
+    const tokens = generateToken(x.accountId);
 
-    let tokens = dbWorker.generateToken(x.accountId);
-
-    res.json({
-      ...x,
+    res.status(400).json({
       ...tokens,
+      ...x,
     });
     return;
   } catch (err) {
-    res.status(400).send({
-      error: err,
-    });
     return;
   }
 }
 
-module.exports = authenticate;
+export default authenticate;

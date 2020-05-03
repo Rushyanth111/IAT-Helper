@@ -1,8 +1,8 @@
+import Token from 'uid-generator';
 import db from './createToken';
-import token from 'uid-generator';
 
 function generateToken(accountId) {
-  const tokgen = new token();
+  const tokgen = new Token();
   const accessToken = tokgen.generate();
   const refreshToken = tokgen.generate();
   const expires = 3600;
@@ -21,4 +21,4 @@ function generateToken(accountId) {
   return record;
 }
 
-module.exports = generateToken;
+export default generateToken;

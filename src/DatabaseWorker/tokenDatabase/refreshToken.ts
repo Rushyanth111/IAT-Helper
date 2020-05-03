@@ -30,4 +30,4 @@ function refreshToken(refreshToken) {
   });
 }
 
-module.exports = refreshToken;
+export default refreshToken;

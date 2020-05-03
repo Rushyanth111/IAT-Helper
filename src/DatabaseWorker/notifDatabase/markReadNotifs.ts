@@ -10,4 +10,4 @@ function markReadNotifs(notificationId) {
   });
 }
 
-module.exports = markReadNotifs;
+export default markReadNotifs;
