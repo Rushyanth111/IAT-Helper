@@ -1,6 +1,6 @@
 import db from './infoCreate';
 
-function authenticateUser(email, password): Promise<boolean> {
+function authenticateUser(email: string, password: string): Promise<boolean> {
   return new Promise((resolve) => {
     db.findOne(
         {
@@ -9,7 +9,6 @@ function authenticateUser(email, password): Promise<boolean> {
         },
         (err, docs) => {
           if (!err && docs !== null) {
-            console.log(docs);
             resolve(true);
           } else {
             resolve(false);

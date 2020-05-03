@@ -21,11 +21,12 @@
     }
   ],
   "rules": {
-    "semi": ["error", "always"],
     "require-jsdoc": "off",
     "no-var": 2,
     "prefer-const": 2,
     "linebreak-style": 0,
     "no-mixed-requires": 2,
+    "semi": "off",
+    "@typescript-eslint/semi": ["error"]
   }
 }

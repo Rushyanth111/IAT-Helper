@@ -1,10 +1,10 @@
-import {authenticateUser, getUserDetails, addUser} from './infoDatabase';
-import {} from './notifDatabase';
-import {} from './tokenDatabase';
+import {addNotif, getNotifs, markReadNotifs} from './notifDatabase';
+import {addUser, authenticateUser, getUserDetails} from './infoDatabase';
+import {generateToken, refreshToken} from './tokenDatabase';
 export {
   getUserDetails,
   getNotifs,
-  addNotifs,
+  addNotif,
   addUser,
   markReadNotifs,
   authenticateUser,

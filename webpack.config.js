@@ -1,7 +1,7 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 module.exports = {
-  entry: ['./src/index.ts'],
+  entry: path.resolve('./src/index.ts'),
   module: {
     rules: [
       {
@@ -20,4 +20,9 @@ module.exports = {
   target: 'node',
   mode: 'development',
   externals: [nodeExternals()],
+  watchOptions: {
+    poll: 1000,
+    ignored: /node_modules/,
+    aggregateTimeout: 1000,
+  },
 };

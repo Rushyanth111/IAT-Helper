@@ -7,9 +7,9 @@ function addUser(
     accountType: number
 ): void {
   const tokgen = new Token();
-
+  const accountId = tokgen.generateSync();
   db.insert({
-    accountId: tokgen.generate(),
+    accountId: accountId,
     email: email,
     username: username,
     password: password,

@@ -1,24 +1,27 @@
-const db = require('./infoCreate').default;
-
-async function getUserDetails(email: string): Promise<JSON> {
+import Token from 'uid-generator';
+import {UserDetails} from '../../ResponseObjects';
+import db from './infoCreate';
+import {pick} from '../../Utiliy';
+async function getUserDetails(email: string): Promise<UserDetails> {
   return new Promise((resolve, reject) => {
-    db.findOne(
-        {email: email},
-        {
-          accountId: 1,
-          email: 1,
-          username: 1,
-          accountType: 1,
-          _id: 0,
-        },
-        function(err: string, docs: JSON | PromiseLike<JSON>) {
-          if (!err) {
-            resolve(docs);
-          } else {
-            reject(new Error(err));
-          }
-        }
-    );
+    db.findOne<UserDetails>({email: email}, function(
+        err: Error,
+        docs: UserDetails
+    ) {
+      if (!err) {
+        resolve(
+          pick(
+              docs,
+              'email',
+              'username',
+              'accountType',
+              'accountId'
+          ) as UserDetails
+        );
+      } else {
+        reject(err);
+      }
+    });
   });
 }
 

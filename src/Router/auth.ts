@@ -19,7 +19,7 @@ async function authenticate(req: Request, res: Response): Promise<void> {
     }
     const userDetails = await getUserDetails(email);
 
-    const tokens = await generateToken(x.accountId);
+    const tokens = await generateToken(userDetails.accountId);
 
     res.status(200).json({
       ...tokens,
