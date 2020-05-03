@@ -2,7 +2,7 @@ import {Request, Response} from 'express-serve-static-core';
 
 import {addUser} from '../DatabaseWorker';
 
-async function addUserRoute(req: Request, res: Response): Promise<void> {
+async function register(req: Request, res: Response): Promise<void> {
   try {
     const username = req.body.username;
     const password = req.body.password;
@@ -17,4 +17,4 @@ async function addUserRoute(req: Request, res: Response): Promise<void> {
   }
 }
 
-export default addUserRoute;
+export default register;
