@@ -1,10 +1,12 @@
 import Token from 'uid-generator';
 import db from './createToken';
 
-function generateToken(accountId) {
+async function generateToken(
+    accountId: string
+): Promise<Record<string, string | number>> {
   const tokgen = new Token();
-  const accessToken = tokgen.generate();
-  const refreshToken = tokgen.generate();
+  const accessToken: string = await tokgen.generate();
+  const refreshToken: string = await tokgen.generate();
   const expires = 3600;
   const createdAt = new Date().getTime();
 

@@ -1,19 +1,19 @@
-import dbCreator from "../createDatabase";
+import dbCreator from '../createDatabase';
 
-const db = dbCreator("token.db");
+const db = dbCreator('token.db');
 
 db.ensureIndex({
-  fieldName: "accountID",
+  fieldName: 'accountID',
   unique: true,
 });
 
 db.ensureIndex({
-  fieldName: "accessToken",
+  fieldName: 'accessToken',
   unique: true,
 });
 
 db.ensureIndex({
-  fieldName: "createdAt",
+  fieldName: 'createdAt',
   expireAfterSeconds: 1209600,
 });
 
