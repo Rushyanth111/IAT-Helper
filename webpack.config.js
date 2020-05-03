@@ -22,7 +22,7 @@ module.exports = {
   externals: [nodeExternals()],
   watchOptions: {
     poll: 1000,
-    ignored: /node_modules/,
+    ignored: [/node_modules/, 'src/test/**/*.ts'],
     aggregateTimeout: 1000,
   },
 };
