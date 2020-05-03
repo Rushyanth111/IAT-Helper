@@ -1,7 +1,7 @@
+import Token from 'uid-generator';
 import db from './createToken';
-import token from 'uid-generator';
-function refreshToken(refreshToken) {
-  const tokgen = new token();
+function refreshToken(refreshToken: string): Promise<Record<string, any>> {
+  const tokgen = new Token();
   db.update(
       {refreshToken: refreshToken},
       {

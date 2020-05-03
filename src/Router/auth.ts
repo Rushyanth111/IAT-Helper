@@ -5,21 +5,31 @@ import {
   getUserDetails,
 } from '../DatabaseWorker';
 
-async function authenticate(req: Request, res: Response) {
+async function authenticate(req: Request, res: Response): Promise<void> {
   try {
-    const email = req.body['email'];
-    const password = req.body.password;
-    let x = await authenticateUser(email, password);
-    x = await getUserDetails(email);
+    const email: string | undefined = req.body.email;
+    const password: string | undefined = req.body.password;
+    if (email === undefined || password === undefined) {
+      throw new Error('No Email/Password was provided.');
+    }
 
-    const tokens = generateToken(x.accountId);
+    const x = await authenticateUser(email, password);
+    if (x == false) {
+      throw new Error('You have not registered or Have the wrong Password.');
+    }
+    const userDetails = await getUserDetails(email);
 
-    res.status(400).json({
+    const tokens = await generateToken(x.accountId);
+
+    res.status(200).json({
       ...tokens,
-      ...x,
+      ...userDetails,
     });
     return;
   } catch (err) {
+    res.status(401).json({
+      Error: err,
+    });
     return;
   }
 }

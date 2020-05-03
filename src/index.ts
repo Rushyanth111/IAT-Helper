@@ -4,7 +4,7 @@ import express from 'express';
 
 const app = express();
 app.use(bodyparser.json());
-const port: number = 10000;
+const port = 10000;
 
 app.post('/auth', authenticate);
 
