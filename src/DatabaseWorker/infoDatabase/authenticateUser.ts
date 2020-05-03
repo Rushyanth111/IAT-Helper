@@ -1,20 +1,20 @@
-import db from "./infoCreate"
+import db from './infoCreate';
 
-function authenticateUser(email, password) {
+function authenticateUser(email, password): Promise<boolean> {
   return new Promise((resolve) => {
     db.findOne(
-      {
-        email: email,
-        password: password,
-      },
-      (err, docs) => {
-        if (!err && docs !== null) {
-          console.log(docs);
-          resolve(true);
-        } else {
-          resolve(false);
+        {
+          email: email,
+          password: password,
+        },
+        (err, docs) => {
+          if (!err && docs !== null) {
+            console.log(docs);
+            resolve(true);
+          } else {
+            resolve(false);
+          }
         }
-      }
     );
   });
 }

@@ -1,8 +1,14 @@
-import insert from "./infoCreate";
-import token from "uid-generator";
-function addUser(email: string, username: string, password: string, accountType: number) {
-  const tokgen = new token();
-  insert({
+import Token from 'uid-generator';
+import db from './infoCreate';
+function addUser(
+    email: string,
+    username: string,
+    password: string,
+    accountType: number
+): void {
+  const tokgen = new Token();
+
+  db.insert({
     accountId: tokgen.generate(),
     email: email,
     username: username,

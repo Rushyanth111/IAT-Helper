@@ -1,10 +1,9 @@
-const addNotifs = require("./addNotif");
-const getNotifs = require("./getNotifs");
-const markReadNotifs = require("./markReadNotifs");
-const addNotif = require("./addNotif");
+import addNotif from './addNotif';
+import getNotifs from './getNotifs';
+import markReadNotifs from './markReadNotifs';
 
 module.exports = {
-  addNotifs: addNotif,
-  getNotifs: getNotifs,
-  markReadNotifs: markReadNotifs
+  addNotif,
+  getNotifs,
+  markReadNotifs,
 };

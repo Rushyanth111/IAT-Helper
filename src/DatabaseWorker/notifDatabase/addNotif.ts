@@ -1,6 +1,6 @@
 import Tokens from 'uid-generator';
 import db from './notifCreate';
-function addNotif(fromId, ToId, Message) {
+function addNotif(fromId: string, ToId: string, Message: string): void {
   const tokgen = new Tokens();
   db.insert({
     notificationId: tokgen.generate(),

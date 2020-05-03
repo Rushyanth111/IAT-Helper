@@ -1,13 +1,13 @@
-import dbcreator from "../createDatabase";
+import dbcreator from '../createDatabase';
 
-const db = dbcreator("info.db");
+const db = dbcreator('info.db');
 db.ensureIndex({
-  fieldName: "email",
+  fieldName: 'email',
   unique: true,
 });
 
 db.ensureIndex({
-  fieldName: "accountId",
+  fieldName: 'accountId',
   unique: true,
 });
 
