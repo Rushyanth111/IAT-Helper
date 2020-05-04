@@ -1,6 +1,6 @@
 import Token from 'uid-generator';
 import db from './infoCreate';
-function addUser(
+function register(
     email: string,
     username: string,
     password: string,
@@ -17,4 +17,4 @@ function addUser(
   });
 }
 
-export default addUser;
+export default register;

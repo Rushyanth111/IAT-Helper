@@ -1,5 +1,5 @@
-import addUser from './addUser';
 import authenticateUser from './authenticateUser';
 import getUserDetails from './getUserDetails';
+import register from './register';
 
-export {getUserDetails, addUser, authenticateUser};
+export {getUserDetails, register, authenticateUser};

@@ -1,6 +1,6 @@
 import {Request, Response} from 'express-serve-static-core';
 
-import {addUser} from '../DatabaseWorker';
+import {addUser} from '../../DatabaseWorker';
 
 async function register(req: Request, res: Response): Promise<void> {
   try {

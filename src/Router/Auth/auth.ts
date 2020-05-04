@@ -3,7 +3,7 @@ import {
   authenticateUser,
   generateToken,
   getUserDetails,
-} from '../DatabaseWorker';
+} from '../../DatabaseWorker';
 
 async function authenticate(req: Request, res: Response): Promise<void> {
   try {

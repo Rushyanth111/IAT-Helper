@@ -4,7 +4,7 @@
     "es6": true
   },
   "extends": [
-    "google",
+    "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended"
   ],
@@ -27,6 +27,7 @@
     "linebreak-style": 0,
     "no-mixed-requires": 2,
     "semi": "off",
+    "quotes": ["error", "single"],
     "@typescript-eslint/semi": ["error"]
   }
 }
